@@ -11,6 +11,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* Banner Section Style */
 .banner {
     display: flex;
     height: 100vh;
@@ -61,8 +63,9 @@ body {
     align-items: center;
 }
 .hero-img {
-    border-radius: 10px;
+    border-radius: 7px;
     overflow: hidden;
+    border: 4px solid #22bedd;
 }
 
 @keyframes typing {
@@ -169,4 +172,99 @@ body {
     100% {
         content: '|';
     }
+}
+
+/* Gallery Section Style */
+.section-title {
+    color: #22bedd;
+    font-size: 40px;
+    margin: 50px 0;
+    padding: 0 10px;
+    text-align: center;
+}
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.photo {
+    height: 280px;
+    width: 280px;
+    position: relative;
+    overflow: hidden;
+}
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.border {
+    background-color: white;
+    position: absolute;
+    transition: .7s ease-in-out;
+}
+.border.left, .border.right {
+    height: 270px;
+    width: 4px;
+}
+.border.top, .border.bottom {
+    height: 4px;
+    width: 270px;
+}
+.border.top {
+    top: 5px;
+    right: 100%;
+}
+.border.bottom {
+    bottom: 5px;
+    left: 100%;
+}
+.border.left {
+    left: 5px;
+    top: 100%;
+}
+.border.right {
+    bottom: 100%;
+    right: 5px;
+}
+.photo:hover .border.top {
+    right: 5px;
+}
+.photo:hover .border.bottom {
+    left: 5px;
+}
+.photo:hover .border.left {
+    top: 5px;
+}
+.photo:hover .border.right {
+    bottom: 5px;
+}
+.photo-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 25px;
+    left: 0;
+    color: white;
+    padding: 30px;
+    transform: translateY(400px);
+    transition: .5s ease-in-out;
+}
+.photo:hover .photo-content {
+    transform: translateY(200px);
+}
+.photo::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: .3s linear;
+}
+.photo:hover::before {
+    opacity: 1;
 }
