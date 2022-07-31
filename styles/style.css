@@ -40,10 +40,10 @@ body {
 .banner-text {
     line-height: 1.5;
     margin: 15px 0;
+    margin-bottom: 30px;
 }
 .btn {
     outline: 0;
-    font-size: 16px;
     padding: 10px 30px;
     background-color: #22bedd;
     color: white;
@@ -51,6 +51,7 @@ body {
     border: 3px solid #22bedd;
     cursor: pointer;
     transition: .2s linear;
+    text-decoration: none;
 }
 .btn:hover {
     background-color: transparent;
@@ -177,7 +178,7 @@ body {
 /* Gallery Section Style */
 .section-title {
     color: #22bedd;
-    font-size: 40px;
+    font-size: 35px;
     margin: 50px 0;
     padding: 0 10px;
     text-align: center;
@@ -189,15 +190,20 @@ body {
     flex-wrap: wrap;
 }
 .photo {
-    height: 280px;
+    height: 350px;
     width: 280px;
     position: relative;
     overflow: hidden;
+    border-radius: 5px;
+    box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(61, 60, 60),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 .photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .border {
     background-color: white;
@@ -205,7 +211,7 @@ body {
     transition: .7s ease-in-out;
 }
 .border.left, .border.right {
-    height: 270px;
+    height: 340px;
     width: 4px;
 }
 .border.top, .border.bottom {
@@ -252,7 +258,7 @@ body {
     transition: .5s ease-in-out;
 }
 .photo:hover .photo-content {
-    transform: translateY(200px);
+    transform: translateY(340px);
 }
 .photo::before {
     content: '';
@@ -267,4 +273,13 @@ body {
 }
 .photo:hover::before {
     opacity: 1;
+}
+
+/* footer section style */
+footer {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
